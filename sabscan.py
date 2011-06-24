@@ -1,15 +1,20 @@
 #!/usr/bin/python
 
-import sys
+import sys, ping
 
 
 # take address range from command line, last octent only
 
+command = sys.argv[1]
+net = sys.argv[2]
+start = int(sys.argv[3])
+end = int(sys.argv[4])
 
-start = int(sys.argv[1])
-end = int(sys.argv[2])
 
-print ("Start = " + str(start) + " End = " + str(end))
+if command == "scannet":
+	addr = net
+	print "Network scan of " + net + " network"
+	print ("Start = " + str(start) + " End = " + str(end))
 
 while True:
         print " ", start
@@ -17,5 +22,7 @@ while True:
         if start == end:
                 break
 	# function to to scan goes here
+	target = addr + start
+	# scantarget
 print "done"
 
